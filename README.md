@@ -24,6 +24,7 @@ Visual Studio Code (VSCode) ou Gitpod e Xampp para abrir um servidor local para 
 * **Um desenvolvedor** - *Desenvolvedor* - [Emanuel Cézar](https://github.com/EmanuelCezardm)
 * **Um desenvolvedor** - *Desenvolvedor* - [Guilherme Barbosa](https://github.com/Guylhermee)
 * **Um desenvolvedor** - *Desenvolvedor* - [Monalisa Cavalcanti](https://github.com/monalisa36)
+* **Um desenvolvedor** - *Desenvolvedor* - [Tayllane Barbosa](https://github.com/tayllane)
 * **Um desenvolvedor** - *Desenvolvedor* - [Victor Lemos](https://github.com/victorflll)
 
 ## 📄 Licença
