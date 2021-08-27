@@ -3,12 +3,14 @@
 
 	class Adress{
 		private $street;
+        private $houseNumber;
 		private $neighborhood;
 		private $city;
         private $state;
 
-		function __construct($street, $neighborhood, $city, $state){
+		function __construct($street, $houseNumber, $neighborhood, $city, $state){
 			$this->street = $street;
+			$this->houseNumber = $houseNumber;
 			$this->neighborhood = $neighborhood;
 			$this->city = $city;
 			$this->state = $state;
@@ -20,6 +22,14 @@
     
         public function setStreet($street){
             $this->street = $street;
+        }
+
+        public function getHouseNumber(){
+            return $this->houseNumber;
+        }
+    
+        public function setHouseNumber($houseNumber){
+            $this->houseNumber = $houseNumber;
         }
     
         public function getNeighborhood(){
