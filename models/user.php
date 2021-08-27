@@ -1,21 +1,19 @@
 <?php
-    include "models/animal.php";
+    require_once "models/adress.php";
 
 	class User{
 		private $name;
 		private $email;
 		private $password;
         private $cpf;
-        private $adress;
-        private $animal;
+        private Adress $adress;
 
-		function __construct($name, $email, $password, $cpf, $adress, $animal){
+		function __construct($name, $email, $password, $cpf, $adress){
 			$this->name = $name;
 			$this->email = $email;
 			$this->password = $password;
 			$this->cpf = $cpf;
 			$this->adress = $adress;
-            $this->animal = $animal;
 		}
 
         public function getName(){
@@ -56,14 +54,6 @@
     
         public function setAdress($adress){
             $this->adress = $adress;
-        }
-
-        public function getAnimal(){
-            return $this->animal;
-        }
-    
-        public function setAnimal($animal){
-            $this->animal = $animal;
         }
 	}
 ?>
