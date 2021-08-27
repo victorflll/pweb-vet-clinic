@@ -1,6 +1,6 @@
 # Sistema de Vendas de Roupa para Lojas Online Associadas ao Instagram
 
-Projeto geral da disciplina de Programação Web 2 que visa a desenvolver uma aplicação PHP para que clientes possam comprar roupas disponibilizadas na loja online, enquanto vendedores possam cadastrar sua loja online relacionada, obrigatoriamente, à uma loja no Instagram. 
+O projeto envolve uma aplicação fácil de usar. Usuário que são cadastrados podem enviar sintomas do seu pet/animal para um médico e receber uma resposta. Essa funcionalidade estará disponível por meio de uma taxa a ser paga pelo usuário. Além disso, deve ser possível agendar vacinas. O acesso gratuito deverá liberar uma lista de doenças básicas associadas com cada tipo de animal e fotos dos sintomas dessas doenças.
 
 Este projeto está sendo realizado em 2021, no IFAL - Campus Arapiraca, turma 924.
 
