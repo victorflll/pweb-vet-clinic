@@ -1,4 +1,4 @@
-# Sistema de Vendas de Roupa para Lojas Online Associadas ao Instagram
+# Sistema de Agendamento e Pagamento para Veterinários
 
 O projeto envolve uma aplicação fácil de usar. Usuário que são cadastrados podem enviar sintomas do seu pet/animal para um médico e receber uma resposta. Essa funcionalidade estará disponível por meio de uma taxa a ser paga pelo usuário. Além disso, deve ser possível agendar vacinas. O acesso gratuito deverá liberar uma lista de doenças básicas associadas com cada tipo de animal e fotos dos sintomas dessas doenças.
 
