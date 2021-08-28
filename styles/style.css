@@ -1,0 +1,37 @@
+#formulario {
+    box-shadow: 6px 6px 6px 6px rgba(0,0,0,0.4);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    margin-left: 35%;
+    margin-right: 35%;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+
+.classe{
+    padding: 6px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+
+.classe input{
+    width: 100%;
+}
+
+#logs{
+    margin-top: 35px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#bot{
+    border-bottom-color: black;
+    margin-top: 7px;
+    margin-bottom: 12px;
+}
+
