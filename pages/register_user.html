@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset='utf-8'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
-    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+  <link rel="stylesheet" type="text/css" href="../styles/style.css">
 
-    <title>Cadastro de Usuário</title>
+  <title>Cadastro de Usuário</title>
 
 </head>
 
 
 <body>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between">
-    
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between">
+
     <a class="navbar-brand" href="#">Menu</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -35,7 +36,8 @@
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             Animal
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -62,67 +64,67 @@
       <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Pesquisar</button>
     </form>
 
-  </nav> 
+  </nav>
 
-<div class="jumbotron text-center">
+  <div class="jumbotron text-center">
     <h1>Cadastro de Usuário</h1>
-</div>
+  </div>
 
-<div id="formulario" >
-    <form method="POST" name="form" action="register_user.php">
+  <div id="formulario">
+    <form method="POST" name="form" action="../api/scripts/register_user.php">
 
       <div class="classe">
-      <label for="name">Nome completo: </label>
-      <input type="text" name="name">
+        <label for="name">Nome completo: </label>
+        <input type="text" name="name">
       </div>
 
       <div class="classe">
-      <label for="email">E-mail: </label>
-      <input type="email" name="email">
+        <label for="email">E-mail: </label>
+        <input type="email" name="email">
       </div>
 
       <div class="classe">
-      <label for="cpf">CPF: </label>
-      <input type="text" oninput="mascara(this)" name="cpf">
+        <label for="cpf">CPF: </label>
+        <input type="text" oninput="mascara(this)" name="cpf">
       </div>
 
       <div class="classe">
-      <label for="password">Senha: </label>
-      <input type="password" name="password">
+        <label for="password">Senha: </label>
+        <input type="password" name="password">
       </div>
 
       <div class="classe">
-      <label for="street">Rua: </label>
-      <input type="text" name="street">
+        <label for="street">Rua: </label>
+        <input type="text" name="street">
       </div>
 
       <div class="classe">
-      <label for="houseNumber">N° ou Complemento: </label>
-      <input type="text" name="houseNumber">
+        <label for="houseNumber">N° ou Complemento: </label>
+        <input type="text" name="houseNumber">
       </div>
 
       <div class="classe">
-      <label for="neighborhood">Bairro: </label>
-      <input type="text" name="neighborhood">
+        <label for="neighborhood">Bairro: </label>
+        <input type="text" name="neighborhood">
       </div>
 
       <div class="classe">
-      <label for="city">Cidade: </label>
-      <input type="text" name="city">
+        <label for="city">Cidade: </label>
+        <input type="text" name="city">
       </div>
 
       <div class="classe">
-      <label for="state">Estado: </label>
-      <input type="text" name="state">
+        <label for="state">Estado: </label>
+        <input type="text" name="state">
       </div>
 
-       <button type="submit" id="bot" value="Send">Efetuar Cadastro</button>
-  
-  </form>
-</div>
+      <button type="submit" id="bot" value="toSend">Efetuar Cadastro</button>
+
+    </form>
+  </div>
 
   <div id="logs">
-  <p> Já possui uma conta? <a href="index.html">Login </a> </p>
+    <p> Já possui uma conta? <a href="index.html">Login</a></p>
   </div>
 
 </body>
@@ -134,19 +136,19 @@
 
 <script>
 
-function mascara(i){
-   
-   var v = i.value;
-   
-   if(isNaN(v[v.length-1])){ 
-      i.value = v.substring(0, v.length-1);
-      return;
-   }
-   
-   i.setAttribute("maxlength", "14");
-   if (v.length == 3 || v.length == 7) i.value += ".";
-   if (v.length == 11) i.value += "-";
+  function mascara(i) {
 
-}
+    var v = i.value;
+
+    if (isNaN(v[v.length - 1])) {
+      i.value = v.substring(0, v.length - 1);
+      return;
+    }
+
+    i.setAttribute("maxlength", "14");
+    if (v.length == 3 || v.length == 7) i.value += ".";
+    if (v.length == 11) i.value += "-";
+
+  }
 
 </script>

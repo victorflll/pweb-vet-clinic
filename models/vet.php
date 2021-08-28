@@ -1,12 +1,12 @@
 <?php
-    include "models/animal.php";
+    require_once "models/adress.php";
 
 	class Vet{
 		private $name;
 		private $email;
 		private $password;
         private $cpf;
-        private $adress;
+        private Adress $adress;
         private $crmv;
         private $wage;
         private $workload;

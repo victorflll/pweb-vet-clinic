@@ -1,7 +1,7 @@
 <?php
-    include('connection.php');
-    include('models/user.php');
-    include('models/adress.php');
+    include('../connection.php');
+    include('../../models/user.php');
+    include('../../models/adress.php');
     
     if(
         empty($_POST['name']) || 
