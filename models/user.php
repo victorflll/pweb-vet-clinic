@@ -13,7 +13,7 @@
 			$this->email = $email;
 			$this->password = $password;
 			$this->cpf = $cpf;
-			$this->adress = $adress;
+            $this->adress = $adress;
 		}
 
         public function getName(){
@@ -47,7 +47,7 @@
         public function setCpf($cpf){
             $this->cpf = $cpf;
         }
-    
+
         public function getAdress(){
             return $this->adress;
         }

@@ -1,6 +1,6 @@
 <?php
-    include('connection.php');
-    include('models/animal.php');
+    include('../connection.php');
+    include('../../models/animal.php');
     
     if(
         empty($_POST['name']) || 

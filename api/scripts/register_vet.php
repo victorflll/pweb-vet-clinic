@@ -1,7 +1,7 @@
 <?php
-    include('connection.php');
-    include('models/vet.php');
-    include('models/adress.php');
+    include('../connection.php');
+    include('../../models/user.php');
+    include('../../models/adress.php');
     
     if(
         empty($_POST['name']) || 
@@ -20,20 +20,17 @@
         exit();
     }
 
-    $adress = new Adress(
-        $_POST['street'], 
-        $_POST['housenumber'], 
-        $_POST['neighborhood'], 
-        $_POST['city'], 
-        $_POST['state']
-    );
     $ps = md5($_POST["password"]);
 	$vet = new Vet(
         $_POST['name'], 
         $_POST['email'], 
         $ps,
         $_POST['cpf'], 
-        $adress,
+        $_POST['street'], 
+        $_POST['housenumber'], 
+        $_POST['neighborhood'], 
+        $_POST['city'], 
+        $_POST['state'],
         $_POST['crmv'], 
         $_POST['wage'], 
         $_POST['workload']
@@ -43,11 +40,11 @@
     $email = $vet->getEmail();
     $cpf = $vet->getCpf();
     $password = $vet->getPassword();
-    $street = $adress->getStreet();
-    $houseNumber = $adress->getHouseNumber();
-    $neighborhood = $adress->getNeighborhood();
-    $city = $adress->getCity();
-    $state = $adress->getState();
+    $street = $vet->getStreet();
+    $houseNumber = $vet->getHouseNumber();
+    $neighborhood = $vet->getNeighborhood();
+    $city = $vet->getCity();
+    $state = $vet->getState();
     $crmv = $vet->getCrmv();
     $wage = $vet->getWage();
     $workload = $vet->getWorkload();
@@ -109,6 +106,6 @@
         ));
 
         echo "Cadastro realizado com sucesso.";
-        header("Location: index.html");
+        header("Location: ../../pages/index.html");
     }
 ?>
