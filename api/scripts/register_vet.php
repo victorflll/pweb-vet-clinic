@@ -1,8 +1,7 @@
 <?php
     include('../connection.php');
-    include('../../models/user.php');
-    include('../../models/adress.php');
-    
+    include('../../models/vet.php');
+
     if(
         empty($_POST['name']) || 
         empty($_POST['email']) || 
@@ -16,21 +15,24 @@
         empty($_POST['wage']) || 
         empty($_POST['workload'])
         ){
-        header('Location: register_vet.html');
+        header('Location: ../../pages/register_vet.html');
         exit();
     }
-
+    
+    $adress = new Adress(
+        $_POST['street'], 
+        $_POST['houseNumber'], 
+        $_POST['neighborhood'], 
+        $_POST['city'], 
+        $_POST['state']
+    );
     $ps = md5($_POST["password"]);
 	$vet = new Vet(
         $_POST['name'], 
         $_POST['email'], 
         $ps,
         $_POST['cpf'], 
-        $_POST['street'], 
-        $_POST['housenumber'], 
-        $_POST['neighborhood'], 
-        $_POST['city'], 
-        $_POST['state'],
+        $adress,
         $_POST['crmv'], 
         $_POST['wage'], 
         $_POST['workload']
@@ -40,11 +42,11 @@
     $email = $vet->getEmail();
     $cpf = $vet->getCpf();
     $password = $vet->getPassword();
-    $street = $vet->getStreet();
-    $houseNumber = $vet->getHouseNumber();
-    $neighborhood = $vet->getNeighborhood();
-    $city = $vet->getCity();
-    $state = $vet->getState();
+    $street = $adress->getStreet();
+    $houseNumber = $adress->getHouseNumber();
+    $neighborhood = $adress->getNeighborhood();
+    $city = $adress->getCity();
+    $state = $adress->getState();
     $crmv = $vet->getCrmv();
     $wage = $vet->getWage();
     $workload = $vet->getWorkload();
@@ -80,7 +82,7 @@
         )");
 
     $fetch = "SELECT `cpf`, `email` FROM `vet`";
-    $result = $conn->query($fetch);
+    $result = $connection->query($fetch);
     while($row = $result->fetch()) {
         if($row['cpf'] == $cpf || $row['email'] == $email){
             $i++;
