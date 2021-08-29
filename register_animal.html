@@ -10,7 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
-    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <title>Cadastro de Animal</title>
 
@@ -69,56 +69,72 @@
 </div>
 
 <div id="formulario" >
-    <form method="POST" name="form" action="register_user.php">
+    <form method="POST" name="form" action="register_animal.php">
 
-      <div class="class">
+      <div class="classe">
       <label for="name">Nome do animal: </label>
       <input type="text" name="name">
       </div>
 
-      <div class="class">
+      <div class="classe">
       <label for="age">Idade: </label>
-      <input type="number" name="age">
+      <input type="text" name="age">
       </div>
 
-      <div class="class">
+       <div class="classe"> 
+      <p>Tipo de animal:<br> <select name="type"></p>
+      <option>Animal Canino</option>
+      <option>Animal felino</option>
+      <option>Ave</option>
+      <option>Réptil</option>
+      <option>Anfíbio</option>
+      <option>Animal Bovino</option>
+      <option>Animal Caprino</option>
+      <option>Outro</option>
+      </select>
+      </div>
+
+      <div class="classe"> 
+        <p>Gênero:<br> <select name="gender"></p>
+        <option>Macho</option>
+        <option>Fêmea</option>
+        </select>
+      </div>
+
+       <div class="classe">
       <label for="breed">Raça: </label>
       <input type="text" name="breed">
       </div>
 
-      <div class="class">
-      <label for="type">Tipo: </label>
-      <input type="text" name="type">
+
+       <div id="list">
+        <div class="classe"> 
+        <p>Porte do Animal:<br> <select name="size" ></p>
+        <option>Pequeno</option>
+        <option>Médio</option>
+        <option>Grande</option>
+        </select>
+      </div>
       </div>
 
-      <div class="class">
-      <label for="gender">Gênero: </label>
-      <input type="text" name="street">
-      </div>
-
-      <div class="class">
-      <label for="size">Porte do animal: </label>
-      <input type="text" name="size">
-      </div>
-
-      <div class="class">
+      <div class="classe">
       <label for="fur">Pelagem: </label>
       <input type="text" name="fur">
       </div>
 
-      <div class="class">
+      <div class="classe">
       <label for="furCollor">Cor da pelagem: </label>
       <input type="text" name="furCollor">
       </div>
 
-      <div class="class">
+      <div class="classe">
       <label for="deficiency">Apresenta algum tipo de deficiência? </label>
-      <input type="text" name="deficiency">
+      <input type="text" name="hasDeficiency">
       </div>
 
-      <div class="class">
+      <div class="classe">
       <label for="additional">Informações adicionais: </label>
-      <input type="text" name="additional">
+      <input type="text" name="additionalFeatures">
       </div>
 
        <button type="submit" id="bot" value="Send">Efetuar Cadastro</button>
@@ -133,25 +149,3 @@
 </body>
 
 </html>
-
-
-
-
-<script>
-
-function mascara(i){
-   
-   var v = i.value;
-   
-   if(isNaN(v[v.length-1])){ 
-      i.value = v.substring(0, v.length-1);
-      return;
-   }
-   
-   i.setAttribute("maxlength", "14");
-   if (v.length == 3 || v.length == 7) i.value += ".";
-   if (v.length == 11) i.value += "-";
-
-}
-
-</script>
