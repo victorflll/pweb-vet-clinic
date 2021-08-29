@@ -2,7 +2,6 @@
 	class Animal{
         private $name; //nome
 		private $age; //idade
-		private $hasDeficiency; //têm deficiência?
 		private $deficiency; //deficiência
 		private $type; //tipo
 		private $breed; //raça
@@ -12,14 +11,14 @@
 		private $furCollor; //cor da pelagem
 		private $additionalFeatures; //características adicionais
 		
-		function __construct($name, $age, $hasDeficiency, $deficiency, $type, $breed, $gender, $size, $fur, $furCollor, $additionalFeatures)
+		function __construct($name, $age, $deficiency, $type, $breed, $gender, $size, $fur, $furCollor, $additionalFeatures)
         {
             $this->name = $name;
             $this->age = $age;
-            $this->hasDeficiency = $hasDeficiency;
             $this->deficiency = $deficiency;
             $this->type = $type;
             $this->breed = $breed;
+            $this->gender = $gender;
             $this->size = $size;
             $this->fur = $fur;
             $this->furCollor = $furCollor;
@@ -40,14 +39,6 @@
     
         public function setAge($age){
             $this->age = $age;
-        }
-    
-        public function getHasDeficiency(){
-            return $this->hasDeficiency;
-        }
-    
-        public function setHasDeficiency($hasDeficiency){
-            $this->hasDeficiency = $hasDeficiency;
         }
     
         public function getDeficiency(){

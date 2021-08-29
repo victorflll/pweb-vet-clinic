@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset='utf-8'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
-    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+  <link rel="stylesheet" type="text/css" href="../styles/style.css">
 
-    <title>Cadastro de Animal</title>
+  <title>Cadastro de Animal</title>
 
 </head>
 
 
 <body>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between">
-    
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between">
+
     <a class="navbar-brand" href="#">Menu</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -35,7 +36,8 @@
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             Animal
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -62,88 +64,88 @@
       <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Pesquisar</button>
     </form>
 
-  </nav> 
+  </nav>
 
-<div class="jumbotron text-center">
+  <div class="jumbotron text-center">
     <h1>Cadastro de Animal</h1>
-</div>
+  </div>
 
-<div id="formulario" >
-    <form method="POST" name="form" action="register_animal.php">
-
-      <div class="classe">
-      <label for="name">Nome do animal: </label>
-      <input type="text" name="name">
-      </div>
+  <div id="formulario">
+    <form method="POST" name="form" action="../api/scripts/register_animal.php">
 
       <div class="classe">
-      <label for="age">Idade: </label>
-      <input type="text" name="age">
+        <label for="name">Nome do animal: </label>
+        <input type="text" name="name">
       </div>
 
-       <div class="classe"> 
-      <p>Tipo de animal:<br> <select name="type"></p>
-      <option>Animal Canino</option>
-      <option>Animal felino</option>
-      <option>Ave</option>
-      <option>Réptil</option>
-      <option>Anfíbio</option>
-      <option>Animal Bovino</option>
-      <option>Animal Caprino</option>
-      <option>Outro</option>
-      </select>
+      <div class="classe">
+        <label for="age">Idade: </label>
+        <input type="text" name="age">
       </div>
 
-      <div class="classe"> 
+      <div class="classe">
+        <p>Tipo de animal:<br> <select name="type"></p>
+        <option>Animal Canino</option>
+        <option>Animal felino</option>
+        <option>Ave</option>
+        <option>Réptil</option>
+        <option>Anfíbio</option>
+        <option>Animal Bovino</option>
+        <option>Animal Caprino</option>
+        <option>Outro</option>
+        </select>
+      </div>
+
+      <div class="classe">
         <p>Gênero:<br> <select name="gender"></p>
         <option>Macho</option>
         <option>Fêmea</option>
         </select>
       </div>
 
-       <div class="classe">
-      <label for="breed">Raça: </label>
-      <input type="text" name="breed">
+      <div class="classe">
+        <label for="breed">Raça: </label>
+        <input type="text" name="breed">
       </div>
 
 
-       <div id="list">
-        <div class="classe"> 
-        <p>Porte do Animal:<br> <select name="size" ></p>
-        <option>Pequeno</option>
-        <option>Médio</option>
-        <option>Grande</option>
-        </select>
-      </div>
+      <div id="list">
+        <div class="classe">
+          <p>Porte do Animal:<br> <select name="size"></p>
+          <option>Pequeno</option>
+          <option>Médio</option>
+          <option>Grande</option>
+          </select>
+        </div>
       </div>
 
       <div class="classe">
-      <label for="fur">Pelagem: </label>
-      <input type="text" name="fur">
+        <label for="fur">Pelagem: </label>
+        <input type="text" name="fur">
       </div>
 
       <div class="classe">
-      <label for="furCollor">Cor da pelagem: </label>
-      <input type="text" name="furCollor">
+        <label for="furcollor">Cor da pelagem: </label>
+        <input type="text" name="furcollor">
       </div>
 
       <div class="classe">
-      <label for="deficiency">Apresenta algum tipo de deficiência? </label>
-      <input type="text" name="hasDeficiency">
+        <label for="deficiency">Apresenta algum tipo de deficiência? Se sim, insira aqui:</label>
+        <input type="text" name="deficiency">
       </div>
 
       <div class="classe">
-      <label for="additional">Informações adicionais: </label>
-      <input type="text" name="additionalFeatures">
+        <label for="additionalfeatures">Informações adicionais: </label>
+        <input type="text" name="additionalfeatures">
       </div>
 
-       <button type="submit" id="bot" value="Send">Efetuar Cadastro</button>
-  
-  </form>
-</div>
+      <button type="submit" id="bot" value="Send">Efetuar Cadastro</button>
+
+    </form>
+  </div>
 
   <div id="logs">
-  <a href="index.html">Tela Inicial </a>
+    <a href="index.html">Tela Inicial </a>
   </div>
 
 </body>
