@@ -1,11 +1,10 @@
 <?php
-    include('connection.php');
-    include('models/animal.php');
+    include('../connection.php');
+    include('../../models/animal.php');
     
     if(
         empty($_POST['name']) || 
         empty($_POST['age']) || 
-        empty($_POST['hasDeficiency']) || 
         empty($_POST['type']) || 
         empty($_POST['breed']) || 
         empty($_POST['gender']) || 
@@ -13,14 +12,13 @@
         empty($_POST['fur']) || 
         empty($_POST['furCollor'])
         ){
-        header('Location: register_animal.html');
+        header('Location: ../../pages/register_animal.html');
         exit();
     }
 
 	$animal = new Animal(
         $_POST['name'], 
         $_POST['age'], 
-        $_POST['hasDeficiency'], 
         $_POST['deficiency'], 
         $_POST['type'], 
         $_POST['breed'],
@@ -33,7 +31,6 @@
     
     $name = $animal->getName();
     $age = $animal->getAge();
-    $hasDeficiency = $animal->getHasDeficiency();
     $deficiency = $animal->getDeficiency();
     $type = $animal->getType();
     $breed = $animal->getBreed();
@@ -46,7 +43,6 @@
     $stmt = $connection->prepare("INSERT INTO `animal`(
         `name`, 
         `age`, 
-        `hasDeficiency`, 
         `deficiency`, 
         `type`, 
         `breed`, 
@@ -58,7 +54,6 @@
     VALUES (
         :name, 
         :age, 
-        :hasDeficiency, 
         :deficiency, 
         :type, 
         :breed, 
@@ -72,7 +67,6 @@
     $stmt->execute(array(
         ':name' => $name, 
         ':age' => $age, 
-        ':hasDeficiency' => $hasDeficiency, 
         ':deficiency'=> $deficiency,
         ':type' => $type, 
         ':breed' => $breed, 
@@ -84,5 +78,5 @@
     ));
 
     echo "Cadastro realizado com sucesso.";
-    header("Location: index.html");
+    header("Location: ../../pages/index.html");
 ?>

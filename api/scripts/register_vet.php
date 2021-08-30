@@ -1,8 +1,7 @@
 <?php
-    include('connection.php');
-    include('models/vet.php');
-    include('models/adress.php');
-    
+    include('../connection.php');
+    include('../../models/vet.php');
+
     if(
         empty($_POST['name']) || 
         empty($_POST['email']) || 
@@ -16,13 +15,13 @@
         empty($_POST['wage']) || 
         empty($_POST['workload'])
         ){
-        header('Location: register_vet.html');
+        header('Location: ../../pages/register_vet.html');
         exit();
     }
-
+    
     $adress = new Adress(
         $_POST['street'], 
-        $_POST['housenumber'], 
+        $_POST['houseNumber'], 
         $_POST['neighborhood'], 
         $_POST['city'], 
         $_POST['state']
@@ -83,7 +82,7 @@
         )");
 
     $fetch = "SELECT `cpf`, `email` FROM `vet`";
-    $result = $conn->query($fetch);
+    $result = $connection->query($fetch);
     while($row = $result->fetch()) {
         if($row['cpf'] == $cpf || $row['email'] == $email){
             $i++;
@@ -109,6 +108,6 @@
         ));
 
         echo "Cadastro realizado com sucesso.";
-        header("Location: index.html");
+        header("Location: ../../pages/index.html");
     }
 ?>

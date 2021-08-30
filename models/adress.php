@@ -1,14 +1,14 @@
 <?php
 
 	class Adress{
-		private $street;
+        private $street;
         private $houseNumber;
 		private $neighborhood;
 		private $city;
         private $state;
 
 		function __construct($street, $houseNumber, $neighborhood, $city, $state){
-			$this->street = $street;
+            $this->street = $street;
 			$this->houseNumber = $houseNumber;
 			$this->neighborhood = $neighborhood;
 			$this->city = $city;
@@ -54,6 +54,6 @@
         public function setState($state){
             $this->state = $state;
         }
+
 	}
-    
 ?>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="../styles/style.css">
+
+  <title>Cadastro de Animal</title>
+
+</head>
+
+
+<body>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between">
+
+    <a class="navbar-brand" href="#">Menu</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+      <ul class="navbar-nav">
+
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Início <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Animal
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="register_animal.html">Cadastrar Animal</a>
+            <a class="dropdown-item" href="#">Atualizar Cadastro</a>
+            <a class="dropdown-item" href="#">Excluir Animal</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Conta</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Consultas</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Search">
+      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Pesquisar</button>
+    </form>
+
+  </nav>
+
+  <div class="jumbotron text-center">
+    <h1>Cadastro de Animal</h1>
+  </div>
+
+  <div id="formulario">
+    <form method="POST" name="form" action="../api/scripts/register_animal.php">
+
+      <div class="classe">
+        <label for="name">Nome do animal: </label>
+        <input type="text" name="name">
+      </div>
+
+      <div class="classe">
+        <label for="age">Idade: </label>
+        <input type="text" name="age">
+      </div>
+
+      <div class="classe">
+        <p>Tipo de animal:<br> <select name="type"></p>
+        <option>Animal Canino</option>
+        <option>Animal felino</option>
+        <option>Ave</option>
+        <option>Réptil</option>
+        <option>Anfíbio</option>
+        <option>Animal Bovino</option>
+        <option>Animal Caprino</option>
+        <option>Outro</option>
+        </select>
+      </div>
+
+      <div class="classe">
+        <p>Gênero:<br> <select name="gender"></p>
+        <option>Macho</option>
+        <option>Fêmea</option>
+        </select>
+      </div>
+
+      <div class="classe">
+        <label for="breed">Raça: </label>
+        <input type="text" name="breed">
+      </div>
+
+
+      <div id="list">
+        <div class="classe">
+          <p>Porte do Animal:<br> <select name="size"></p>
+          <option>Pequeno</option>
+          <option>Médio</option>
+          <option>Grande</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="classe">
+        <label for="fur">Pelagem: </label>
+        <input type="text" name="fur">
+      </div>
+
+      <div class="classe">
+        <label for="furCollor">Cor da pelagem: </label>
+        <input type="text" name="furCollor">
+      </div>
+
+      <div class="classe">
+        <label for="deficiency">Apresenta algum tipo de deficiência? Se sim, insira aqui:</label>
+        <input type="text" name="deficiency">
+      </div>
+
+      <div class="classe">
+        <label for="additionalFeatures">Informações adicionais: </label>
+        <input type="text" name="additionalFeatures">
+      </div>
+
+      <button type="submit" id="bot" value="Send">Efetuar Cadastro</button>
+
+    </form>
+  </div>
+
+  <div id="logs">
+    <a href="index.html">Tela Inicial </a>
+  </div>
+
+</body>
+
+</html>

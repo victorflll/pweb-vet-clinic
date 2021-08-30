@@ -1,7 +1,6 @@
 <?php
     include('../connection.php');
     include('../../models/user.php');
-    include('../../models/adress.php');
     
     if(
         empty($_POST['name']) || 
@@ -13,13 +12,13 @@
         empty($_POST['city']) || 
         empty($_POST['state'])
         ){
-        header('Location: register_user.html');
+        header("Location: ../../pages/register_user.html");
         exit();
     }
 
     $adress = new Adress(
         $_POST['street'], 
-        $_POST['housenumber'], 
+        $_POST['houseNumber'], 
         $_POST['neighborhood'], 
         $_POST['city'], 
         $_POST['state']
@@ -29,7 +28,7 @@
         $_POST['name'], 
         $_POST['email'], 
         $ps,
-        $_POST['cpf'], 
+        $_POST['cpf'],
         $adress
     );
     
@@ -68,7 +67,7 @@
         )");
 
     $fetch = "SELECT `cpf`, `email` FROM `user`";
-    $result = $conn->query($fetch);
+    $result = $connection->query($fetch);
     while($row = $result->fetch()) {
         if($row['cpf'] == $cpf || $row['email'] == $email){
             $i++;
@@ -91,6 +90,5 @@
         ));
 
         echo "Cadastro realizado com sucesso.";
-        header("Location: index.html");
+        header("Location: ../../pages/index.html");
     }
-?>

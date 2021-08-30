@@ -41,6 +41,12 @@
     background-color: gray;
     width: 51%;
     margin-top: 18px;
+
     margin-bottom: 12px;
 }
+#slidebarSite{
+    width: 840px;
+    height: 300px;
+}
+
 

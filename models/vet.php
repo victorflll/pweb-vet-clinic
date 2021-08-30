@@ -1,5 +1,5 @@
 <?php
-    require_once "models/adress.php";
+    require_once "adress.php";
 
 	class Vet{
 		private $name;
@@ -17,7 +17,7 @@
 			$this->email = $email;
 			$this->password = $password;
 			$this->cpf = $cpf;
-			$this->adress = $adress;
+            $this->adress = $adress;
             $this->crmv = $crmv;
             $this->wage = $wage;
             $this->workload = $workload;
@@ -54,7 +54,7 @@
         public function setCpf($cpf){
             $this->cpf = $cpf;
         }
-    
+
         public function getAdress(){
             return $this->adress;
         }
