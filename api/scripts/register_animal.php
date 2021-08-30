@@ -10,7 +10,7 @@
         empty($_POST['gender']) || 
         empty($_POST['size']) ||
         empty($_POST['fur']) || 
-        empty($_POST['furcollor'])
+        empty($_POST['furCollor'])
         ){
         header('Location: ../../pages/register_animal.html');
         exit();
@@ -25,8 +25,8 @@
         $_POST['gender'],
         $_POST['size'],
         $_POST['fur'],
-        $_POST['furcollor'],
-        $_POST['additionalfeatures'],
+        $_POST['furCollor'],
+        $_POST['additionalFeatures'],
     );
     
     $name = $animal->getName();
@@ -49,8 +49,8 @@
         `gender`, 
         `size`, 
         `fur`,
-        `furcollor`,
-        `additionalfeatures`) 
+        `furCollor`,
+        `additionalFeatures`) 
     VALUES (
         :name, 
         :age, 
@@ -60,8 +60,8 @@
         :gender, 
         :size, 
         :fur,
-        :furcollor,
-        :additionalfeatures
+        :furCollor,
+        :additionalFeatures
         )");
 
     $stmt->execute(array(
@@ -73,8 +73,8 @@
         ':gender' => $gender, 
         ':size'=> $size,
         ':fur'=> $fur,
-        ':furcollor'=> $furCollor,
-        ':additionalfeatures'=> $additionalFeatures
+        ':furCollor'=> $furCollor,
+        ':additionalFeatures'=> $additionalFeatures
     ));
 
     echo "Cadastro realizado com sucesso.";

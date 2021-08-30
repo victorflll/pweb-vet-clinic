@@ -41,7 +41,7 @@ CREATE TABLE `animal`(
     `gender` VARCHAR(200) NOT NULL, 
     `size` VARCHAR(200),
     `fur` VARCHAR(200),
-    `furColor` VARCHAR(200) NULL,
+    `furCollor` VARCHAR(200) NULL,
 	`additionalFeatures` VARCHAR(1000) NULL,
     CONSTRAINT PRIMARY KEY(`idanimal`)
 );
