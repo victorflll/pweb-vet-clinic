@@ -71,7 +71,7 @@
   </div>
 
   <div id="formulario">
-    <form method="POST" name="form" action="../api/scripts/register_animal.php">
+    <form method="POST" name="form" action="" id="regAnimal">
 
       <div class="classe">
         <label for="name">Nome do animal: </label>
@@ -139,7 +139,7 @@
         <input type="text" name="additionalFeatures">
       </div>
 
-      <button type="submit" id="bot" value="Send">Efetuar Cadastro</button>
+      <input type="button" value="Registrar Animal" id="save" />
 
     </form>
   </div>
@@ -151,3 +151,28 @@
 </body>
 
 </html>
+
+<script type="text/javascript" language="javascript">
+
+  $(document).ready(function() {
+      $('#save').click(function() {
+
+          var dados = $('#regAnimal').serialize();
+
+          $.ajax({
+              type: 'POST',
+              dataType: 'json',
+              url: '../api/scripts/register_animal.php',
+              async: true,
+              data: dados,
+              success: function(response) {
+                  location.reload();
+              },
+              error: function(req, err) {
+                  console.log('Mensagem:' + err);
+              }
+          });
+          return false;
+      });
+  });
+</script>

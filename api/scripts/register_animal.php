@@ -40,43 +40,30 @@
     $furCollor = $animal->getFurCollor();
     $additionalFeatures = $animal->getAdditionalFeatures();
 
-    $stmt = $connection->prepare("INSERT INTO `animal`(
-        `name`, 
-        `age`, 
-        `deficiency`, 
-        `type`, 
-        `breed`, 
-        `gender`, 
-        `size`, 
-        `fur`,
-        `furCollor`,
-        `additionalFeatures`) 
-    VALUES (
-        :name, 
-        :age, 
-        :deficiency, 
-        :type, 
-        :breed, 
-        :gender, 
-        :size, 
-        :fur,
-        :furCollor,
-        :additionalFeatures
-        )");
+    $sql = "INSERT INTO `animal` (`name`, 
+    `age`, 
+    `deficiency`, 
+    `type`, 
+    `breed`, 
+    `gender`, 
+    `size`, 
+    `fur`,
+    `furCollor`,
+    `additionalFeatures`) 
+    VALUES ('$name', 
+    '$age', 
+    '$deficiency', 
+    '$type',
+    '$breed',
+    '$gender',
+    '$size',
+    '$fur',
+    '$furCollor',
+    '$additionalFeatures')";
 
-    $stmt->execute(array(
-        ':name' => $name, 
-        ':age' => $age, 
-        ':deficiency'=> $deficiency,
-        ':type' => $type, 
-        ':breed' => $breed, 
-        ':gender' => $gender, 
-        ':size'=> $size,
-        ':fur'=> $fur,
-        ':furCollor'=> $furCollor,
-        ':additionalFeatures'=> $additionalFeatures
-    ));
+	mysqli_query($connection, $sql) or die(error());
+	$response = array("success" => true);
+	echo json_encode($response);
 
     echo "Cadastro realizado com sucesso.";
-    header("Location: ../../pages/index.html");
 ?>

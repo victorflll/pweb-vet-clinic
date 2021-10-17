@@ -44,8 +44,7 @@
     
     $i = 0;
 
-    $stmt = $connection->prepare("INSERT INTO `user`(
-        `name`, 
+    $sql = "INSERT INTO `user` (`name`, 
         `email`, 
         `cpf`, 
         `password`, 
@@ -54,21 +53,21 @@
         `neighborhood`, 
         `city`, 
         `state`) 
-    VALUES (
-        :name, 
-        :email, 
-        :cpf, 
-        :password, 
-        :street, 
-        :houseNumber, 
-        :neighborhood, 
-        :city, 
-        :state
-        )");
+    VALUES ('$name', 
+        '$email', 
+        '$cpf', 
+        '$password',
+        '$street',
+        '$houseNumber',
+        '$neighborhood',
+        '$city',
+        '$state')";
 
-    $fetch = "SELECT `cpf`, `email` FROM `user`";
-    $result = $connection->query($fetch);
-    while($row = $result->fetch()) {
+
+    $select = "SELECT `cpf`, `email` FROM `user`";
+    $result = mysqli_query($connection, $select);
+
+    while($row = mysqli_fetch_array($result)) {
         if($row['cpf'] == $cpf || $row['email'] == $email){
             $i++;
         }
@@ -77,18 +76,11 @@
     if($i>0){
         echo "Cliente já existente.";
     }else{
-        $stmt->execute(array(
-            ':name' => $name, 
-            ':email' => $email, 
-            ':cpf' => $cpf, 
-            ':password'=> $password,
-            ':street' => $street, 
-            ':houseNumber' => $houseNumber, 
-            ':neighborhood' => $neighborhood, 
-            ':city'=> $city,
-            ':state'=> $state
-        ));
+        mysqli_query($connection, $sql) or die(error());
+        $response = array("success" => true);
+	    echo json_encode($response);
 
         echo "Cadastro realizado com sucesso.";
-        header("Location: ../../pages/index.html");
-    }
+    } 
+	
+?>

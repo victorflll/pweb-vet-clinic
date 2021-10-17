@@ -71,7 +71,7 @@
   </div>
 
   <div id="formulario">
-    <form method="POST" name="form" action="../api/scripts/register_user.php">
+    <form method="POST" name="form" action="" id="regUser">
 
       <div class="classe">
         <label for="name">Nome completo: </label>
@@ -119,25 +119,47 @@
       </div>
 
       <div id="botao">
-      <button type="submit" id="bot" class="btn btn-primary btn-lg btn-block">Efetuar Cadastro</button>
+        <button type="submit" id="save" class="btn btn-primary btn-lg btn-block">Efetuar Cadastro</button>
       </div>
 
       <div id="logs">
-          <p> Já possui uma conta? <a href="index.html">Login</a></p>
+        <p> Já possui uma conta? <a href="index.html">Login</a></p>
       </div>
 
     </form>
 
   </div>
 
-<br><br>
+  <br><br>
 
 </body>
 
 </html>
 
+<script type="text/javascript" language="javascript">
 
+  $(document).ready(function () {
+    $('#save').click(function () {
 
+      var dados = $('#regUser').serialize();
+
+      $.ajax({
+        type: 'POST',
+        dataType: 'json',
+        url: '../api/scripts/register_user.php',
+        async: true,
+        data: dados,
+        success: function (response) {
+          location.reload();
+        },
+        error: function (req, err) {
+          console.log('Mensagem:' + err);
+        }
+      });
+      return false;
+    });
+  });
+</script>
 
 <script>
 
