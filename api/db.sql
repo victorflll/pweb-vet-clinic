@@ -2,8 +2,8 @@ CREATE DATABASE vetsystem;
 USE vetsystem;
 
 CREATE TABLE `user`(
-	`iduser` INT AUTO_INCREMENT,
-	`name` VARCHAR(200) NOT NULL,
+    `iduser` INT AUTO_INCREMENT,
+    `name` VARCHAR(200) NOT NULL,
     `email` VARCHAR(200) NOT NULL,
     `password` VARCHAR(32) NOT NULL,
     `cpf` VARCHAR(14) NOT NULL,
@@ -13,11 +13,11 @@ CREATE TABLE `user`(
     `city` VARCHAR(200) NOT NULL, 
     `state` VARCHAR(200) NOT NULL, 
     CONSTRAINT PRIMARY KEY(`iduser`, `cpf`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
     
 CREATE TABLE `vet`(
-	`idvet` INT AUTO_INCREMENT,
-	`name` VARCHAR(200) NOT NULL,
+    `idvet` INT AUTO_INCREMENT,
+    `name` VARCHAR(200) NOT NULL,
     `email` VARCHAR(200) NOT NULL,
     `password` VARCHAR(32) NOT NULL,
     `cpf` VARCHAR(14) NOT NULL,
@@ -30,18 +30,19 @@ CREATE TABLE `vet`(
     `wage` DOUBLE NOT NULL,
     `workload` INT NOT NULL,
     CONSTRAINT PRIMARY KEY(`idvet`, `cpf`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 CREATE TABLE `animal`(
-	`idanimal` INT AUTO_INCREMENT,
-	`name` VARCHAR(200) NOT NULL,
+    `idanimal` INT AUTO_INCREMENT,
+    `name` VARCHAR(200) NOT NULL default '',
     `age` INT NULL,
     `deficiency` VARCHAR(200) NULL,
-    `type` VARCHAR(200) NOT NULL, 
+    `type` VARCHAR(200) NOT NULL default '', 
     `breed` VARCHAR(200) NULL, 
-    `gender` VARCHAR(200) NOT NULL, 
-    `size` VARCHAR(200),
-    `fur` VARCHAR(200),
-    `furCollor` VARCHAR(200) NULL,
-	`additionalFeatures` VARCHAR(1000) NULL,
+    `gender` VARCHAR(200) NOT NULL default '', 
+    `size` VARCHAR(200) NULL,
+    `fur` VARCHAR(200) NULL,
+    `furcollor` VARCHAR(200) NULL,
+    `additionalfeatures` VARCHAR(1000) NULL,
     CONSTRAINT PRIMARY KEY(`idanimal`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
