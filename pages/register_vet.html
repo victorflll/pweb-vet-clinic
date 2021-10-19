@@ -66,8 +66,8 @@
 </div>
  
 <div id="formulario" >
-    <form method="POST" name="form" action="../api/scripts/register_vet.php">
- 
+    <form method="POST" name="form" action="" id="regVet">
+
       <div class="classe">
       <label for="name">Nome completo: </label>
       <input type="text" name="name">
@@ -128,22 +128,49 @@
       <input type="text" name="workload">
       </div>
  
-       <button type="submit" id="bot" value="Send">Efetuar Cadastro</button>
+      <div id="botao">
+        <button type="submit" id="save" class="btn btn-primary btn-lg btn-block">Efetuar Cadastro</button>
+      </div>
+
+      <div id="logs">
+      <p> Já possui uma conta? <a href="index.html">Login </a> </p>
+      </div>
   
   </form>
 </div>
  
-  <div id="logs">
-  <p> Já possui uma conta? <a href="index.html">Login </a> </p>
-  </div>
+  
  
 </body>
  
 </html>
  
  
- 
- 
+<script type="text/javascript" language="javascript">
+
+  $(document).ready(function() {
+      $('#save').click(function() {
+
+          var dados = $('#regVet').serialize();
+
+          $.ajax({
+              type: 'POST',
+              dataType: 'json',
+              url: '../api/scripts/register_vet.php',
+              async: true,
+              data: dados,
+              success: function(response) {
+                  location.reload();
+              },
+              error: function(req, err) {
+                  console.log('Mensagem:' + err);
+              }
+          });
+          return false;
+      });
+  });
+</script> 
+
 <script>
  
 function mascara(i){
@@ -162,3 +189,4 @@ function mascara(i){
 }
  
 </script>
+

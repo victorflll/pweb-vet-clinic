@@ -53,7 +53,7 @@
     
     $i = 0;
 
-    $stmt = $connection->prepare("INSERT INTO `vet`(
+    $sql = "INSERT INTO `vet`(
         `name`, 
         `email`, 
         `cpf`, 
@@ -66,24 +66,27 @@
         `crmv`,
         `wage`,
         `workload`) 
+    
     VALUES (
-        :name, 
-        :email, 
-        :cpf, 
-        :password, 
-        :street, 
-        :houseNumber, 
-        :neighborhood, 
-        :city, 
-        :state,
-        :crmv,
-        :wage,
-        :workload
-        )");
+        '$name', 
+        '$email', 
+        '$cpf', 
+        '$password',
+        '$street',
+        '$houseNumber',
+        '$neighborhood',
+        '$city',
+        '$state',
+        '$crmv',
+        '$wage',
+        '$workload')
+    ");
 
-    $fetch = "SELECT `cpf`, `email` FROM `vet`";
-    $result = $connection->query($fetch);
-    while($row = $result->fetch()) {
+
+    $select = "SELECT `cpf`, `email` FROM `vet`";
+    $result = mysqli_query($connection, $select);
+    
+    while($row = mysqli_fetch_array($result)) {
         if($row['cpf'] == $cpf || $row['email'] == $email){
             $i++;
         }
@@ -91,23 +94,11 @@
 
     if($i>0){
         echo "Veterinário já existente.";
-    }else{
-        $stmt->execute(array(
-            ':name' => $name, 
-            ':email' => $email, 
-            ':cpf' => $cpf, 
-            ':password'=> $password,
-            ':street' => $street, 
-            ':houseNumber' => $houseNumber, 
-            ':neighborhood' => $neighborhood, 
-            ':city'=> $city,
-            ':state'=> $state,
-            ':crmv'=> $crmv,
-            ':wage'=> $wage,
-            ':workload'=> $workload
-        ));
+    }else{ 
+        mysqli_query($connection, $sql) or die(error());
+        $response = array("success" => true);
+        echo json_encode($response);
 
         echo "Cadastro realizado com sucesso.";
-        header("Location: ../../pages/index.html");
     }
 ?>
